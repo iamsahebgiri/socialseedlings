@@ -11,9 +11,9 @@ export function ThemeToggle() {
     <div className="nav-item">
       <div className="tooltip">
         <button
-          onClick={() => {
-            setTheme(theme === "light" ? "dark" : "light");
-          }}
+          onClick={() =>
+            theme === "light" ? setTheme("dark") : setTheme("light")
+          }
           className={style.toggle__button}
         >
           <Icon
@@ -24,7 +24,7 @@ export function ThemeToggle() {
             height={28}
             width={28}
           />
-          <span>{theme === "light" ? "Dark" : "Light"} mode</span>
+          {theme === "light" ? <span>Dark mode</span> : <span>Light mode</span>}
         </button>
       </div>
     </div>

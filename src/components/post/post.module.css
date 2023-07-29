@@ -7,6 +7,10 @@
   gap: 0.8rem;
 }
 
+.post__header {
+  display: flex;
+}
+
 .post__content {
   display: flex;
   flex-direction: column;

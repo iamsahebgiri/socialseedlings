@@ -25,6 +25,7 @@
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
 
   --bg-color: var(--neutral-50);
+  --bg-header: hsla(210, 40%, 98%, 0.8);
 
   --text-title: var(--neutral-900);
   --text-subtitle: var(--neutral-600);
@@ -37,6 +38,7 @@
 
 :root[data-theme="dark"] {
   --bg-color: var(--neutral-900);
+  --bg-header: hsla(222, 47%, 11%, 0.8);
 
   --text-title: var(--neutral-50);
   --text-subtitle: var(--neutral-300);

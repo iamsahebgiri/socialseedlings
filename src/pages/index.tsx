@@ -1,4 +1,4 @@
-import { Card } from "@/components/card";
+import { Post } from "@/components/post";
 import MainLayout from "@/layouts/main.layout";
 import photosService from "@/services/photos.service";
 import { UnsplashImage } from "@/types/unsplash";
@@ -10,6 +10,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import useSWRInfinite from "swr/infinite";
 import { useRouter } from "next/router";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   {
@@ -39,7 +40,7 @@ const NavItem = ({ title, icon, href }: (typeof navItems)[0]) => {
         <Link href={href}>
           <Icon
             icon={isActive ? icon.filled : icon.regular}
-            color="var(--text-title)"
+            color="var(--icon-color)"
             height={28}
             width={28}
           />
@@ -85,6 +86,7 @@ export default function Home() {
                   icon={navItem.icon}
                 />
               ))}
+              <ThemeToggle />
             </nav>
           </aside>
 
@@ -96,7 +98,7 @@ export default function Home() {
               {isEmpty ? <p>Yay, no images found.</p> : null}
               <div className="card-wrapper">
                 {images.map((image: UnsplashImage) => (
-                  <Card key={image.id} image={image} />
+                  <Post key={image.id} image={image} />
                 ))}
               </div>
 

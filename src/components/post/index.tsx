@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./card.module.css";
+import style from "./post.module.css";
 import { Avatar } from "@/components/avatar";
 import { UnsplashImage } from "@/types/unsplash";
 import { BlurImage } from "../blur-image";
@@ -8,10 +8,10 @@ import { Icon } from "@iconify/react";
 import heart24Regular from "@iconify/icons-fluent/heart-24-regular";
 import dayjs from "@/lib/dayjs";
 
-export function Card({ image }: { image: UnsplashImage }) {
+export function Post({ image }: { image: UnsplashImage }) {
   return (
-    <div className={style.card}>
-      <div className={style.card__header}>
+    <div className={style.post}>
+      <div className={style.post__header}>
         <Link href={`/${image.user.username}`}>
           <Avatar
             url={image.user.profile_image.medium}
@@ -21,7 +21,7 @@ export function Card({ image }: { image: UnsplashImage }) {
           />
         </Link>
       </div>
-      <div className={style.card__content}>
+      <div className={style.post__content}>
         <p>{image.alt_description}</p>
         <Link href={`/photos/${image.id}`}>
           <BlurImage
@@ -34,12 +34,12 @@ export function Card({ image }: { image: UnsplashImage }) {
           />
         </Link>
       </div>
-      <div className={style.card__footer}>
-        <div className={style.card__footer_left}>
+      <div className={style.post__footer}>
+        <div className={style.post__footer_left}>
           <Icon icon={heart24Regular} height={24} width={24} />
           <span>{image.likes} likes</span>
         </div>
-        <p className={style.card__footer_right}>
+        <p className={style.post__footer_right}>
           {dayjs(image.created_at).fromNow()}
         </p>
       </div>

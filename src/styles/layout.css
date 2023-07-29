@@ -1,7 +1,7 @@
 header {
   height: 3rem;
   width: 100%;
-  border-bottom: 1px solid var(--secondary-border-color);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,14 +62,16 @@ header {
 
 .nav-item span {
   visibility: hidden;
-  background-color: var(--neutral-900);
-  color: #fff;
+  background-color: var(--tooltip-bg-color);
+  color: var(--tooltip-text-color);
   box-shadow: var(--shadow);
   text-align: center;
+  text-wrap: nowrap;
   font-size: 0.9rem;
   border-radius: 0.5rem;
   padding: 0.4rem 0.8rem;
   opacity: 0;
+
   transition: all 0.25s ease-in-out;
   transform: translateX(0);
 
@@ -91,7 +93,7 @@ header {
   }
 
   .holy-grail__middle {
-    border-left: 1px solid var(--secondary-border-color);
+    border-left: 1px solid var(--border-color);
   }
 
   .holy-grail__left {
@@ -117,7 +119,7 @@ header {
   }
 
   .holy-grail__middle {
-    border-right: 1px solid var(--secondary-border-color);
+    border-right: 1px solid var(--border-color);
   }
 
   .holy-grail__right {

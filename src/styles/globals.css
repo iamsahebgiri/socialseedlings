@@ -24,11 +24,27 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
 
+  --bg-color: var(--neutral-50);
+
   --text-title: var(--neutral-900);
   --text-subtitle: var(--neutral-600);
 
-  --bg-color: var(--neutral-100);
-  --secondary-border-color: var(--neutral-200);
+  --border-color: var(--neutral-300);
+  --icon-color: var(var(--neutral-800));
+  --tooltip-bg-color: var(--neutral-900);
+  --tooltip-text-color: var(--neutral-50);
+}
+
+:root[data-theme="dark"] {
+  --bg-color: var(--neutral-900);
+
+  --text-title: var(--neutral-50);
+  --text-subtitle: var(--neutral-300);
+
+  --border-color: var(--neutral-700);
+  --icon-color: var(var(--neutral-100));
+  --tooltip-bg-color: var(--neutral-600);
+  --tooltip-text-color: var(--neutral-100);
 }
 
 * {

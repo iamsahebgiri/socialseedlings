@@ -1,6 +1,9 @@
-import { siteConfig } from "@/config/site";
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import { siteConfig } from "@/config/site";
+
+const inter = Inter({ subsets: ["latin"] });
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -8,12 +11,12 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="relative flex min-h-screen flex-col">
+    <div className={`${inter.className}`}>
       <Head>
         <title>{siteConfig.name}</title>
         <meta name="description" content={siteConfig.description} />
       </Head>
-      <div className="flex-1">{children}</div>
+      {children}
     </div>
   );
 }

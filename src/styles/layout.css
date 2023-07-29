@@ -1,0 +1,129 @@
+header {
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid var(--secondary-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+  z-index: 10;
+}
+
+.holy-grail__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.holy-grail__middle {
+  order: 1;
+  border-left: none;
+}
+
+.holy-grail__left {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  z-index: 11;
+  background-color: white;
+}
+
+.holy-grail__right {
+  order: 3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navigation .nav-item {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.nav-item span {
+  visibility: hidden;
+  background-color: var(--neutral-900);
+  color: #fff;
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  transform: translateX(0);
+
+  position: absolute;
+  z-index: 100;
+  left: 110%;
+}
+
+.tooltip:hover span {
+  visibility: visible;
+  transform: translateX(4px);
+  opacity: 1;
+  left: 130%;
+}
+
+@media (min-width: 40rem) {
+  .holy-grail__main {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .holy-grail__middle {
+    border-left: 1px solid var(--secondary-border-color);
+  }
+
+  .holy-grail__left {
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+
+  .navigation {
+    flex-direction: column;
+    background-color: var(--bg-color);
+  }
+}
+
+@media (min-width: 64rem) {
+  .holy-grail__main {
+    grid-template-columns: minmax(60px, 300px) 604px 300px;
+    max-width: calc(300px + 604px + 300px);
+  }
+
+  .navigation {
+    align-items: flex-end;
+  }
+
+  .holy-grail__middle {
+    border-right: 1px solid var(--secondary-border-color);
+  }
+
+  .holy-grail__right {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+}

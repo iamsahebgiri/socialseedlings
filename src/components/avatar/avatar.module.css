@@ -1,0 +1,33 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar__avatar {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: var(--neutral-400);
+}
+
+.avatar img {
+  aspect-ratio: 1/1;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar__name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-title);
+}
+
+.avatar__username {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-subtitle);
+}
+

@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: 1px solid var(--secondary-border-color);
+  gap: 0.8rem;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__footer_right {
+  font-size: 0.9rem;
+  color: var(--text-subtitle);
+}
+
+.card__footer_left {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-subtitle);
+}

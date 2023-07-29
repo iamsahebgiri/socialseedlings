@@ -1,0 +1,9 @@
+.group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dbg {
+  background-color: hsl(200, 90%, 30%);
+}

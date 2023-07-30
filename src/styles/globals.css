@@ -6,9 +6,9 @@
   --screen-xl: 80rem; /*  1280px */
   --screen-2xl: 90rem; /*  1440px */
 
-  --neutral-50: hsl(210, 40%, 98%);
+  --neutral-50: rgb(248, 250, 252);
   --neutral-100: hsl(210, 40%, 96%);
---neutral-200: hsl(214, 32%, 91%);
+  --neutral-200: hsl(214, 32%, 91%);
   --neutral-300: hsl(213, 27%, 84%);
   --neutral-400: hsl(215, 20%, 65%);
   --neutral-500: hsl(215, 16%, 47%);
@@ -51,11 +51,14 @@
 
   --segmented-control-bg: var(--neutral-200);
   --segmented-control-fg: var(--neutral-600);
+
+  --btn-color: var(--neutral-50);
+  --btn-hover-color: var(--neutral-100);
 }
 
 :root[data-theme="dark"] {
   --muted: var(--neutral-500);
-
+  
   --bg-color: var(--neutral-900);
   --bg-header: hsla(222, 47%, 11%, 0.8);
 
@@ -64,16 +67,19 @@
 
   --border-color: var(--neutral-700);
   --icon-color: var(--neutral-100);
-
+  
   --tab-inactive-text-color: var(--neutral-600);
-
+  
   --placeholder-color: var(--neutral-600);
-
+  
   --tooltip-bg-color: var(--neutral-600);
   --tooltip-text-color: var(--neutral-100);
-
+  
   --segmented-control-bg: var(--neutral-800);
   --segmented-control-fg: var(--neutral-400);
+  
+  --btn-color: var(--neutral-900);
+  --btn-hover-color: var(--neutral-800);
 }
 
 * {

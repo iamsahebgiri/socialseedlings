@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <MainLayout>
       <header>
-        <div className="group">Home</div>
+        <div className="group heading">Home</div>
       </header>
       <div>
         <InfiniteScroll

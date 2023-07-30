@@ -17,6 +17,17 @@ class PhotosService extends APIService {
         throw error?.response?.data;
       });
   }
+
+  async random(config?: any) {
+    return this.get("/photos/random", config)
+      .then((response) => {
+        const { data } = response;
+        return data;
+      })
+      .catch((error) => {
+        throw error?.response?.data;
+      });
+  }
 }
 
 const photosService = new PhotosService();

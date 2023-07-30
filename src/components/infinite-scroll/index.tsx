@@ -5,18 +5,18 @@ import { Post } from "../post";
 import { Spinner } from "../spinner";
 import style from "./infinite-scroll.module.css";
 import { Icon } from "@iconify/react";
+import cloudError24Regular from "@iconify/icons-fluent/cloud-error-24-regular";
 import checkmarkCircle24Regular from "@iconify/icons-fluent/checkmark-circle-24-regular";
 import imageCircle24Regular from "@iconify/icons-fluent/image-circle-24-regular";
 import glance24Regular from "@iconify/icons-fluent/glance-24-regular";
 import textBulletListSquare24Regular from "@iconify/icons-fluent/text-bullet-list-square-24-regular";
 import { Masonry } from "../masonry";
+import { ErrorState, InfoState } from "@/components/state";
 
 interface InfiniteScrollProps {
   data: any[] | undefined;
   size: number;
-  setSize: (
-    size: number | ((_size: number) => number)
-  ) => Promise<any[] | undefined>;
+  setSize: (args: any) => any;
   isLoading: boolean;
   error: any;
 }
@@ -57,6 +57,10 @@ export function InfiniteScroll({
     [isLoading, isReachingEnd, data]
   );
 
+  if (error) {
+    return <ErrorState error={error} icon={cloudError24Regular} />;
+  }
+
   return (
     <div>
       <header>
@@ -95,18 +99,11 @@ export function InfiniteScroll({
         </div>
       </header>
       {isEmpty && (
-        <div className={style.end__container}>
-          <Icon
-            icon={imageCircle24Regular}
-            height={48}
-            width={48}
-            color="var(--primary-color)"
-          />
-          <div className={style.end__text_wrapper}>
-            <h2>Oops! Nothing in here</h2>
-            <p>Come back later, may be</p>
-          </div>
-        </div>
+        <InfoState
+          icon={imageCircle24Regular}
+          title="Oops! Nothing in here"
+          subtitle="Come back later, may be"
+        />
       )}
 
       <Masonry columnsCount={columnsCount}>
@@ -120,18 +117,11 @@ export function InfiniteScroll({
 
       {isLoadingMore && <Spinner />}
       {isReachingEnd && !isEmpty && (
-        <div className={style.end__container}>
-          <Icon
-            icon={checkmarkCircle24Regular}
-            height={48}
-            width={48}
-            color="var(--primary-color)"
-          />
-          <div className={style.end__text_wrapper}>
-            <h2>You&apos;re all caught up</h2>
-            <p>You have seen all the photos.</p>
-          </div>
-        </div>
+        <InfoState
+          icon={checkmarkCircle24Regular}
+          title="You're all caught up"
+          subtitle="You have seen all the photos."
+        />
       )}
     </div>
   );

@@ -89,6 +89,11 @@ header {
   left: 130%;
 }
 
+
+.heading {
+  font-weight: 500;
+}
+
 @media (min-width: 40rem) {
   .holy-grail__main {
     grid-template-columns: 60px 1fr;

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 abstract class APIService {
-  private clientId = "YfetefpL-Cf28CMJ1g618rEgc6KReCKcFe3mYoDl7K4";
+  private clientId = process.env.NEXT_PUBLIC_API_CLIENT_ID;
   protected baseURL: string;
   protected headers: any = {};
 

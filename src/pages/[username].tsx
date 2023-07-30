@@ -6,6 +6,8 @@ import usersService from "@/services/users.service";
 import { Profile } from "@/components/profile";
 import { UserProfileTab } from "@/components/tab";
 import { Spinner } from "@/components/spinner";
+import { ErrorState } from "@/components/state";
+import cloudError24Regular from "@iconify/icons-fluent/cloud-error-24-regular";
 
 interface UserProfileProps {
   username: string;
@@ -26,10 +28,12 @@ function UserProfile({ username }: UserProfileProps) {
   }
 
   if (error) {
-    return <div>{JSON.stringify(error)}</div>;
+    return (
+      <MainLayout>
+        <ErrorState error={error} icon={cloudError24Regular} />
+      </MainLayout>
+    );
   }
-
-  console.log(data);
 
   return (
     <MainLayout>

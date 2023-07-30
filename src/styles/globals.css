@@ -40,10 +40,15 @@
   --tooltip-bg-color: var(--neutral-900);
   --tooltip-text-color: var(--neutral-50);
 
-  --tab-inactive-text-color: var(--neutral-500);
+  --tab-inactive-text-color: var(--neutral-600);
 
   --content-padding-x: 1.5rem;
   --content-padding-y: 2rem;
+
+  --border-radius: 0.6rem;
+
+  --segmented-control-bg: var(--neutral-200);
+  --segmented-control-fg: var(--neutral-600);
 }
 
 :root[data-theme="dark"] {
@@ -56,10 +61,15 @@
   --border-color: var(--neutral-700);
   --icon-color: var(--neutral-100);
 
-  --placeholder-color: var(--neutral-600);
+  --tab-inactive-text-color: var(--neutral-600);
 
+  --placeholder-color: var(--neutral-600);
+  
   --tooltip-bg-color: var(--neutral-600);
   --tooltip-text-color: var(--neutral-100);
+
+  --segmented-control-bg: var(--neutral-800);
+  --segmented-control-fg: var(--neutral-400);
 }
 
 * {
@@ -79,86 +89,3 @@ a {
 
 @import url("./utilities.css");
 @import url("./layout.css");
-
-.profile {
-  padding: 5rem 0;
-}
-
-.profile::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.profile-image {
-  float: left;
-  width: calc(33.333% - 1rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 3rem;
-}
-
-.profile-image img {
-  border-radius: 50%;
-}
-
-.profile-user-settings,
-.profile-stats,
-.profile-bio {
-  float: left;
-  width: calc(66.666% - 2rem);
-}
-
-.profile-user-settings {
-  margin-top: 1.1rem;
-}
-
-.profile-user-name {
-  display: inline-block;
-  font-size: 3.2rem;
-  font-weight: 300;
-}
-
-.profile-edit-btn {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  border: 0.1rem solid #dbdbdb;
-  border-radius: 0.3rem;
-  padding: 0 2.4rem;
-  margin-left: 2rem;
-}
-
-.profile-settings-btn {
-  font-size: 2rem;
-  margin-left: 1rem;
-}
-
-.profile-stats {
-  margin-top: 2.3rem;
-}
-
-.profile-stats li {
-  display: inline-block;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  margin-right: 4rem;
-  cursor: pointer;
-}
-
-.profile-stats li:last-of-type {
-  margin-right: 0;
-}
-
-.profile-bio {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 2.3rem;
-}
-
-.profile-real-name,
-.profile-stat-count,
-.profile-edit-btn {
-  font-weight: 600;
-}

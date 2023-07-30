@@ -8,7 +8,7 @@ export function Avatar({ url, name, username, isAvailableForHire }: any) {
       <div className={style.avatar__avatar}>
         <Image src={url} height={64} width={64} alt={name} />
       </div>
-      <div>
+      <div className={style.avatar__text_container}>
         <div className="group">
           <p className={style.avatar__name}>{name}</p>
           {/* <span className={style.avatar__pill}>3h</span> */}

@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { PER_PAGE } from "@/config/constants";
 import { UnsplashImage } from "@/types/unsplash";
 import { Post } from "../post";
@@ -6,7 +6,10 @@ import { Spinner } from "../spinner";
 import style from "./infinite-scroll.module.css";
 import { Icon } from "@iconify/react";
 import checkmarkCircle24Regular from "@iconify/icons-fluent/checkmark-circle-24-regular";
-import imageCircle24Regular from '@iconify/icons-fluent/image-circle-24-regular';
+import imageCircle24Regular from "@iconify/icons-fluent/image-circle-24-regular";
+import glance24Regular from "@iconify/icons-fluent/glance-24-regular";
+import textBulletListSquare24Regular from "@iconify/icons-fluent/text-bullet-list-square-24-regular";
+import { Masonry } from "../masonry";
 
 interface InfiniteScrollProps {
   data: any[] | undefined;
@@ -25,6 +28,8 @@ export function InfiniteScroll({
   isLoading,
   error,
 }: InfiniteScrollProps) {
+  const [columnsCount, setColumnsCount] = useState(1);
+
   const images = data ? [].concat(...data) : [];
   const isLoadingMore =
     isLoading || (size > 0 && data && typeof data[size - 1] === "undefined");
@@ -54,6 +59,41 @@ export function InfiniteScroll({
 
   return (
     <div>
+      <header>
+        <div className={style.view__type_container}>
+          <span />
+          <div className={style.view__btn_container}>
+            <button
+              title="List view"
+              onClick={() => setColumnsCount(1)}
+              className={
+                columnsCount === 1
+                  ? style.view__btn_active
+                  : style.view__btn_inactive
+              }
+            >
+              <Icon
+                icon={textBulletListSquare24Regular}
+                height={20}
+                width={20}
+              />
+              List
+            </button>
+            <button
+              title="Grid view"
+              onClick={() => setColumnsCount(2)}
+              className={
+                columnsCount === 2
+                  ? style.view__btn_active
+                  : style.view__btn_inactive
+              }
+            >
+              <Icon icon={glance24Regular} height={20} width={20} />
+              Grid
+            </button>
+          </div>
+        </div>
+      </header>
       {isEmpty && (
         <div className={style.end__container}>
           <Icon
@@ -68,14 +108,15 @@ export function InfiniteScroll({
           </div>
         </div>
       )}
-      {isEmpty ? <p></p> : null}
 
-      {images.map((image: UnsplashImage, index) => {
-        if (images.length === index + 1) {
-          return <Post ref={lastElementRef} key={image.id} image={image} />;
-        }
-        return <Post key={image.id} image={image} />;
-      })}
+      <Masonry columnsCount={columnsCount}>
+        {images.map((image: UnsplashImage, index) => {
+          if (images.length === index + 1) {
+            return <Post ref={lastElementRef} key={image.id} image={image} />;
+          }
+          return <Post key={image.id} image={image} />;
+        })}
+      </Masonry>
 
       {isLoadingMore && <Spinner />}
       {isReachingEnd && !isEmpty && (

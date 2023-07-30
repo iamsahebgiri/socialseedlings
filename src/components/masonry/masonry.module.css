@@ -1,0 +1,20 @@
+.masonry__parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+  width: 100%;
+}
+
+.masonry__parent > * + * {
+  border-right: 0px;
+  border-left: 1px solid var(--border-color);
+}
+
+.masonry__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: stretch;
+  flex: 1;
+}

@@ -1,11 +1,12 @@
 import React from "react";
+import style from "./masonry.module.css";
 
 interface MasonryProps {
   children: React.ReactNode[];
   columnsCount?: number;
 }
 
-export function Masonry({ children, columnsCount = 3 }: MasonryProps) {
+export function Masonry({ children, columnsCount = 2 }: MasonryProps) {
   const getColumns = () => {
     const columns: React.ReactElement[][] = Array.from(
       { length: columnsCount },
@@ -24,35 +25,11 @@ export function Masonry({ children, columnsCount = 3 }: MasonryProps) {
   const renderColumns = () => {
     const columns = getColumns();
     return columns.map((column, i) => (
-      <div
-        key={i}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignContent: "stretch",
-          flex: 1,
-          // width: 0,
-          gap: "2rem"
-        }}
-      >
+      <div key={i} className={style.masonry__column}>
         {column.map((item) => item)}
       </div>
     ));
   };
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignContent: "stretch",
-        width: "100%",
-        gap: "2rem"
-      }}
-    >
-      {renderColumns()}
-    </div>
-  );
+  return <div className={style.masonry__parent}>{renderColumns()}</div>;
 }

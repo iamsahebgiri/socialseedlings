@@ -30,3 +30,7 @@
   font-size: 0.9rem;
   color: var(--text-subtitle);
 }
+
+.avatar__text_container {
+  flex: 1;
+}

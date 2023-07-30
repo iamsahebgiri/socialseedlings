@@ -31,6 +31,14 @@
   color: var(--text-subtitle);
 }
 
-.avatar__text_container {
-  flex: 1;
+.avatar__text_group {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.avatar__pill {
+  font-weight: 500;
+  font-size: 0.825rem;
+  color: var(--primary-color);
 }

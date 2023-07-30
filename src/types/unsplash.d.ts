@@ -170,3 +170,47 @@ export interface Custom {
   type: string;
   title: string;
 }
+
+
+export interface SingleUnsplashImage {
+  id: string
+  slug: string
+  created_at: string
+  updated_at: string
+  promoted_at: any
+  width: number
+  height: number
+  color: string
+  blur_hash: string
+  description: any
+  alt_description: string
+  breadcrumbs: any[]
+  urls: Urls
+  links: Links
+  likes: number
+  liked_by_user: boolean
+  current_user_collections: any[]
+  sponsorship: Sponsorship
+  topic_submissions: TopicSubmissions
+  user: User
+  exif: Exif
+  location: Location
+  meta: Meta
+  public_domain: boolean
+  tags: Tag[]
+  tags_preview: TagsPreview[]
+  views: number
+  downloads: number
+  topics: any[]
+  related_collections: RelatedCollections
+}
+
+export interface Exif {
+  make: any
+  model: any
+  name: any
+  exposure_time: any
+  aperture: any
+  focal_length: any
+  iso: any
+}

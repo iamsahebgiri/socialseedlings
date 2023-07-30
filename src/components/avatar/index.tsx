@@ -9,9 +9,13 @@ export function Avatar({ url, name, username, isAvailableForHire }: any) {
         <Image src={url} height={64} width={64} alt={name} />
       </div>
       <div className={style.avatar__text_container}>
-        <div className="group">
+        <div className={style.avatar__text_group}>
           <p className={style.avatar__name}>{name}</p>
-          {/* <span className={style.avatar__pill}>3h</span> */}
+          {isAvailableForHire ? (
+            <span className={style.avatar__pill}>Hirable</span>
+          ) : (
+            ""
+          )}
         </div>
         <span className={style.avatar__username}>@{username}</span>
       </div>

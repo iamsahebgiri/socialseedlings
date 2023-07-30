@@ -28,6 +28,17 @@ class PhotosService extends APIService {
         throw error?.response?.data;
       });
   }
+
+  async getPhoto(photoId: string) {
+    return this.get(`/photos/${photoId}`)
+      .then((response) => {
+        const { data } = response;
+        return data;
+      })
+      .catch((error) => {
+        throw error?.response?.data;
+      });
+  }
 }
 
 const photosService = new PhotosService();

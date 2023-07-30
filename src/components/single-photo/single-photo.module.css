@@ -1,0 +1,51 @@
+.single_photo__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.single_photo__header {
+    display: flex;
+}
+
+.profile__stats {
+  flex: 1;
+  display: flex;
+
+  gap: 2rem;
+}
+
+.profile__stats_item p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.profile__stats_item span {
+  color: var(--text-subtitle);
+  font-weight: 500;
+  font-size: 0.825rem;
+}
+
+.tags_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tags__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tag {
+  padding: 0.4rem 0.6rem;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}

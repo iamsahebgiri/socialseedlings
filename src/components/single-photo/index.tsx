@@ -22,9 +22,11 @@ export function SinglePhoto({ image }: { image: SingleUnsplashImage }) {
       </div>
       <BlurImage
         alt={image.alt_description}
+        src={image.urls.regular}
         color={image.color}
         raw={image.urls.raw}
-        src={image.urls.regular}
+        height={image.height}
+        width={image.width}
       />
       <div className={style.row}>
         <div className={style.profile__stats}>

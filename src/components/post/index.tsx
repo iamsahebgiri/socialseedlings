@@ -34,7 +34,7 @@ const Post = React.forwardRef<HTMLDivElement, PostProps>(function Post(
         <Link href={`/photos/${image.id}`}>
           <BlurImage
             alt={image.alt_description}
-            src={image.urls.small}
+            src={image.urls.regular}
             color={image.color}
             raw={image.urls.raw}
             height={image.height}

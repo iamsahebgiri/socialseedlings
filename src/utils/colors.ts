@@ -4,16 +4,28 @@ export const colors = [
     text: "#AE2A19",
   },
   {
-    bg: "#FFE2BD",
-    text: "#974F0C",
-  },
-  {
     bg: "#F8E6A0",
     text: "#7F5F01",
   },
   {
     bg: "#BAF3DB",
     text: "#216E4E",
+  },
+  {
+    bg: "#C1F0F5",
+    text: "#206B74",
+  },
+  {
+    bg: "#CCE0FF",
+    text: "#0055CC",
+  },
+  {
+    bg: "#DFD8FD",
+    text: "#5E4DB2",
+  },
+  {
+    bg: "#FDD0EC",
+    text: "#943D73",
   },
 ];
 

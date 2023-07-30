@@ -3,6 +3,10 @@ import { PER_PAGE } from "@/config/constants";
 import { UnsplashImage } from "@/types/unsplash";
 import { Post } from "../post";
 import { Spinner } from "../spinner";
+import style from "./infinite-scroll.module.css";
+import { Icon } from "@iconify/react";
+import checkmarkCircle24Regular from "@iconify/icons-fluent/checkmark-circle-24-regular";
+import imageCircle24Regular from '@iconify/icons-fluent/image-circle-24-regular';
 
 interface InfiniteScrollProps {
   data: any[] | undefined;
@@ -11,6 +15,7 @@ interface InfiniteScrollProps {
     size: number | ((_size: number) => number)
   ) => Promise<any[] | undefined>;
   isLoading: boolean;
+  error: any;
 }
 
 export function InfiniteScroll({
@@ -18,6 +23,7 @@ export function InfiniteScroll({
   size,
   setSize,
   isLoading,
+  error,
 }: InfiniteScrollProps) {
   const images = data ? [].concat(...data) : [];
   const isLoadingMore =
@@ -46,11 +52,23 @@ export function InfiniteScroll({
     [isLoading, isReachingEnd, data]
   );
 
-  console.log(images.length);
-
   return (
     <div>
-      {isEmpty ? <p>Yay, no images found.</p> : null}
+      {isEmpty && (
+        <div className={style.end__container}>
+          <Icon
+            icon={imageCircle24Regular}
+            height={48}
+            width={48}
+            color="var(--primary-color)"
+          />
+          <div className={style.end__text_wrapper}>
+            <h2>Oops! Nothing in here</h2>
+            <p>Come back later, may be</p>
+          </div>
+        </div>
+      )}
+      {isEmpty ? <p></p> : null}
 
       {images.map((image: UnsplashImage, index) => {
         if (images.length === index + 1) {
@@ -59,8 +77,21 @@ export function InfiniteScroll({
         return <Post key={image.id} image={image} />;
       })}
 
-      {isLoading && <Spinner />}
-      {isReachingEnd && <p>No more images</p>}
+      {isLoadingMore && <Spinner />}
+      {isReachingEnd && !isEmpty && (
+        <div className={style.end__container}>
+          <Icon
+            icon={checkmarkCircle24Regular}
+            height={48}
+            width={48}
+            color="var(--primary-color)"
+          />
+          <div className={style.end__text_wrapper}>
+            <h2>You&apos;re all caught up</h2>
+            <p>You have seen all the photos.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import MainLayout from "@/layouts/main.layout";
 import usersService from "@/services/users.service";
 import { Profile } from "@/components/profile";
 import { UserProfileTab } from "@/components/tab";
+import { Spinner } from "@/components/spinner";
 
 interface UserProfileProps {
   username: string;
@@ -17,7 +18,11 @@ function UserProfile({ username }: UserProfileProps) {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <MainLayout>
+        <Spinner />
+      </MainLayout>
+    );
   }
 
   if (error) {

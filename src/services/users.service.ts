@@ -17,6 +17,28 @@ class UsersService extends APIService {
         throw error?.response?.data;
       });
   }
+
+  async getPhotos(username: string) {
+    return this.get(`/users/${username}/photos`)
+      .then((response) => {
+        const { data } = response;
+        return data;
+      })
+      .catch((error) => {
+        throw error?.response?.data;
+      });
+  }
+
+  async getPhotosInfinite(url: string) {
+    return this.get(url)
+      .then((response) => {
+        const { data } = response;
+        return data;
+      })
+      .catch((error) => {
+        throw error?.response?.data;
+      });
+  }
 }
 
 const usersService = new UsersService();

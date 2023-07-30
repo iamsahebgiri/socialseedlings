@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import heart24Regular from "@iconify/icons-fluent/heart-24-regular";
 import dayjs from "@/lib/dayjs";
+import { formatNumber } from "@/utils/numbers";
 
 interface PostProps {
   image: UnsplashImage;
@@ -44,7 +45,7 @@ const Post = React.forwardRef<HTMLDivElement, PostProps>(function Post(
       <div className={style.post__footer}>
         <div className={style.post__footer_left}>
           <Icon icon={heart24Regular} height={24} width={24} />
-          <span>{image.likes} likes</span>
+          <span>{formatNumber(image.likes)} likes</span>
         </div>
         <p className={style.post__footer_right}>
           {dayjs(image.created_at).fromNow()}

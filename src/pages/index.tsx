@@ -10,8 +10,9 @@ const getKey = (page: number, prevData: any[]) => {
 };
 
 export default function Home() {
-  const { data, size, setSize, isLoading } = useSWRInfinite(getKey, (url) =>
-    photosService.list(url)
+  const { data, size, setSize, isLoading, error } = useSWRInfinite(
+    getKey,
+    (url) => photosService.list(url)
   );
 
   return (
@@ -25,6 +26,7 @@ export default function Home() {
           size={size}
           setSize={setSize}
           isLoading={isLoading}
+          error={error}
         />
       </div>
     </MainLayout>

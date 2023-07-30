@@ -39,7 +39,7 @@ const navItems = [
 
 const NavItem = ({ title, icon, href }: (typeof navItems)[0]) => {
   const router = useRouter();
-  const isActive = router.pathname === href;
+  const isActive = router.asPath === href;
   return (
     <div className="nav-item">
       <div className="tooltip">

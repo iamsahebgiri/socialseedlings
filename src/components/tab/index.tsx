@@ -61,9 +61,9 @@ export function UserProfileTab({ profile }: UserProfileTabProps) {
 
   const getActiveTabContent = () => {
     if (activeTab === "likes") {
-      return <LikesTab />;
+      return <LikesTab key="likes" username={profile.username} />;
     } else if (activeTab === "photos") {
-      return <PhotosTab />;
+      return <PhotosTab key="photos" username={profile.username} />;
     } else if (activeTab === "collections") {
       return <CollectionsTab />;
     }

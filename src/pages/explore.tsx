@@ -1,7 +1,9 @@
 import { InfiniteScroll } from "@/components/infinite-scroll";
 import { PER_PAGE } from "@/config/constants";
+import { siteConfig } from "@/config/site";
 import MainLayout from "@/layouts/main.layout";
 import photosService from "@/services/photos.service";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Explore() {
@@ -25,7 +27,7 @@ export default function Explore() {
         console.log(images);
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         setError(error.response);
       })
       .finally(() => {
@@ -39,6 +41,9 @@ export default function Explore() {
 
   return (
     <MainLayout>
+      <Head>
+        <title>Explore - {siteConfig.name}</title>
+      </Head>
       <header>
         <div className="group heading">Explore</div>
       </header>

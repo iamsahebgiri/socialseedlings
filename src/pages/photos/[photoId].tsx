@@ -7,6 +7,8 @@ import { ErrorState } from "@/components/state";
 import cloudError24Regular from "@iconify/icons-fluent/cloud-error-24-regular";
 import photosService from "@/services/photos.service";
 import { SinglePhoto } from "@/components/single-photo";
+import Head from "next/head";
+import { siteConfig } from "@/config/site";
 
 interface SinglePhotosPageProps {
   photoId: string;
@@ -35,6 +37,11 @@ function SinglePhotosPage({ photoId }: SinglePhotosPageProps) {
 
   return (
     <MainLayout>
+      <Head>
+        <title>
+          {data.alt_description} - {siteConfig.name}
+        </title>
+      </Head>
       <SinglePhoto image={data} />
     </MainLayout>
   );

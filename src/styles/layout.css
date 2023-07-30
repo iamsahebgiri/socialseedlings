@@ -94,6 +94,18 @@ header {
   font-weight: 500;
 }
 
+.brand-container h2 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-title);
+  letter-spacing: -0.025em;
+}
+.brand-container p {
+  font-weight: 500;
+  font-size: 0.825rem;
+  color: var(--text-subtitle);
+}
+
 @media (min-width: 40rem) {
   .holy-grail__main {
     grid-template-columns: 60px 1fr;

@@ -61,7 +61,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className={inter.className}>
       <Head>
-        <title>{siteConfig.name}</title>
+        <title>{siteConfig.name} - {siteConfig.description}</title>
         <meta name="description" content={siteConfig.description} />
       </Head>
       <div className="holy-grail">
@@ -82,7 +82,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
           <article className="holy-grail__middle">{children}</article>
 
-          <footer className="holy-grail__right">Footer</footer>
+          {/* <footer className="holy-grail__right">
+            <div className="brand-container">
+              <h2>{siteConfig.name}</h2>
+              <p>{siteConfig.description}</p>
+            </div>
+          </footer> */}
         </main>
       </div>
     </div>

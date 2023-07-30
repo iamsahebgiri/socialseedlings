@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Social Seedlings",
-  description: "Your Feed",
+  name: "SocialSeedlings",
+  description: "Nurture Connections, Groww Together!",
   mainNav: [],
   links: {
     twitter: "https://twitter.com/iamsahebgiri",

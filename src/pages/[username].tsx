@@ -8,6 +8,8 @@ import { UserProfileTab } from "@/components/tab";
 import { Spinner } from "@/components/spinner";
 import { ErrorState } from "@/components/state";
 import cloudError24Regular from "@iconify/icons-fluent/cloud-error-24-regular";
+import Head from "next/head";
+import { siteConfig } from "@/config/site";
 
 interface UserProfileProps {
   username: string;
@@ -37,6 +39,11 @@ function UserProfile({ username }: UserProfileProps) {
 
   return (
     <MainLayout>
+      <Head>
+        <title>
+          {data.name} - {siteConfig.name}
+        </title>
+      </Head>
       <Profile profile={data} />
       <UserProfileTab profile={data} />
     </MainLayout>

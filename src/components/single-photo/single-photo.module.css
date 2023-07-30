@@ -6,7 +6,7 @@
 }
 
 .single_photo__header {
-    display: flex;
+  display: flex;
 }
 
 .profile__stats {
@@ -37,10 +37,11 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .tag {
@@ -48,4 +49,36 @@
   text-transform: capitalize;
   font-size: 0.8rem;
   border-radius: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.download__btn {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+  color: var(--text-title);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-inter);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0.4rem 1rem;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+}
+
+.download__btn:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
 }

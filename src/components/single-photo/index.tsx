@@ -26,18 +26,31 @@ export function SinglePhoto({ image }: { image: SingleUnsplashImage }) {
         raw={image.urls.raw}
         src={image.urls.regular}
       />
-      <div className={style.profile__stats}>
-        <div className={style.profile__stats_item}>
-          <p>{formatNumber(image.likes)}</p>
-          <span>Likes</span>
+      <div className={style.row}>
+        <div className={style.profile__stats}>
+          <div className={style.profile__stats_item}>
+            <p>{formatNumber(image.likes)}</p>
+            <span>Likes</span>
+          </div>
+          <div className={style.profile__stats_item}>
+            <p>{formatNumber(image.views)}</p>
+            <span>Views</span>
+          </div>
+          <div className={style.profile__stats_item}>
+            <p>{formatNumber(image.downloads)}</p>
+            <span>Downloads</span>
+          </div>
         </div>
-        <div className={style.profile__stats_item}>
-          <p>{formatNumber(image.views)}</p>
-          <span>Views</span>
-        </div>
-        <div className={style.profile__stats_item}>
-          <p>{formatNumber(image.downloads)}</p>
-          <span>Downloads</span>
+        <div>
+          <a
+            href={image.urls.full}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.download__btn}
+            role="button"
+          >
+            Download
+          </a>
         </div>
       </div>
       <div className={style.tags_container}>

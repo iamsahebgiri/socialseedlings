@@ -12,7 +12,7 @@ import home24Regular from "@iconify/icons-fluent/home-24-regular";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -59,7 +59,7 @@ const NavItem = ({ title, icon, href }: (typeof navItems)[0]) => {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className={`${inter.className}`}>
+    <div className={inter.className}>
       <Head>
         <title>{siteConfig.name}</title>
         <meta name="description" content={siteConfig.description} />

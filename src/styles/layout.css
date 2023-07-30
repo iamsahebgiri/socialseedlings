@@ -24,6 +24,7 @@ header {
 .holy-grail__middle {
   order: 1;
   border-left: none;
+  min-height: 100vh;
 }
 
 .holy-grail__left {

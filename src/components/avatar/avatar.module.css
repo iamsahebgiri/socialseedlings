@@ -10,7 +10,7 @@
   width: 3rem;
   overflow: hidden;
   border-radius: 50%;
-  background-color: var(--neutral-400);
+  background-color: var(--placeholder-color);
 }
 
 .avatar img {
@@ -30,4 +30,3 @@
   font-size: 0.9rem;
   color: var(--text-subtitle);
 }
-

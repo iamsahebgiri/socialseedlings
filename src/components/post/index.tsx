@@ -8,9 +8,16 @@ import { Icon } from "@iconify/react";
 import heart24Regular from "@iconify/icons-fluent/heart-24-regular";
 import dayjs from "@/lib/dayjs";
 
-export function Post({ image }: { image: UnsplashImage }) {
+interface PostProps {
+  image: UnsplashImage;
+}
+
+const Post = React.forwardRef<HTMLDivElement, PostProps>(function Post(
+  { image }: PostProps,
+  ref
+) {
   return (
-    <div className={style.post}>
+    <div className={style.post} ref={ref}>
       <div className={style.post__header}>
         <Link href={`/${image.user.username}`}>
           <Avatar
@@ -45,4 +52,6 @@ export function Post({ image }: { image: UnsplashImage }) {
       </div>
     </div>
   );
-}
+});
+
+export { Post };

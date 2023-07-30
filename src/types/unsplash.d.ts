@@ -112,3 +112,61 @@ export interface User {
   for_hire: boolean;
   social: Social;
 }
+
+export interface UserProfile {
+  id: string;
+  updated_at: string;
+  username: string;
+  name: string;
+  first_name: string;
+  last_name: any;
+  twitter_username: string;
+  portfolio_url: string;
+  bio: string;
+  location: any;
+  links: Links;
+  profile_image: ProfileImage;
+  instagram_username: string;
+  total_collections: number;
+  total_likes: number;
+  total_photos: number;
+  accepted_tos: boolean;
+  for_hire: boolean;
+  social: Social;
+  followed_by_user: boolean;
+  photos: Photo[];
+  badge: Badge;
+  tags: Tags;
+  followers_count: number;
+  following_count: number;
+  allow_messages: boolean;
+  numeric_id: number;
+  downloads: number;
+  meta: Meta;
+}
+
+export interface Photo {
+  id: string;
+  slug: string;
+  created_at: string;
+  updated_at: string;
+  blur_hash: string;
+  urls: Urls;
+}
+
+export interface Badge {
+  title: string;
+  primary: boolean;
+  slug: string;
+  link: any;
+}
+
+export interface Tags {
+  custom: Custom[];
+  aggregated: any[];
+}
+
+export interface Custom {
+  type: string;
+  title: string;
+}

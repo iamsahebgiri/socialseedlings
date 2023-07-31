@@ -2,14 +2,14 @@
   position: relative;
   width: "100%";
   border-radius: var(--border-radius);
-  display: flex;
-  transition: all 300ms ease-in-out;
   box-shadow: var(--shadow);
+  background-color: var(--placeholder-color);
+  overflow: hidden;
 }
 
 .image {
-  transition: all 1s ease-in-out;
   border-radius: var(--border-radius);
   width: 100%;
   height: auto;
+  transition: all 0.7s ease-in-out;
 }

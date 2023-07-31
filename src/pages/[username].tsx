@@ -40,9 +40,7 @@ function UserProfile({ username }: UserProfileProps) {
   return (
     <MainLayout>
       <Head>
-        <title>
-          {data.name} - {siteConfig.name}
-        </title>
+        <title>{`${data.name} - ${siteConfig.name}`}</title>
       </Head>
       <Profile profile={data} />
       <UserProfileTab profile={data} />

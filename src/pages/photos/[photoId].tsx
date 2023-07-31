@@ -38,9 +38,7 @@ function SinglePhotosPage({ photoId }: SinglePhotosPageProps) {
   return (
     <MainLayout>
       <Head>
-        <title>
-          {data.alt_description} - {siteConfig.name}
-        </title>
+        <title>{`${data.alt_description} - ${siteConfig.name}`}</title>
       </Head>
       <SinglePhoto image={data} />
     </MainLayout>

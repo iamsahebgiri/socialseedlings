@@ -1,5 +1,5 @@
 import Image, { ImageProps } from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./blur-image.module.css";
 
 interface BlurImageProps extends ImageProps {
@@ -10,24 +10,24 @@ interface BlurImageProps extends ImageProps {
 export function BlurImage(props: BlurImageProps) {
   const { color, height, width, ...rest } = props;
   const [loading, setLoading] = useState(true);
-  const [src, setSrc] = useState(props.src);
-  useEffect(() => setSrc(props.src), [props.src]);
 
   return (
     <div
       className={style.image__container}
       style={{
-        backgroundColor: loading ? color : "var(--bg-color)",
+        backgroundColor: color,
         aspectRatio: Number(width) / Number(height),
       }}
     >
       <Image
         {...rest}
-        src={src}
         alt={props.alt}
         title={props.alt}
-        placeholder="blur"
-        blurDataURL={props.raw + "&q=2&w=60"}
+        style={{
+          filter: loading ? "blur(20px)" : "blur(0px)",
+          transform: loading ? "scale(110%)" : "scale(100%)",
+        }}
+        loading="lazy"
         height={0}
         width={0}
         sizes="100vw"

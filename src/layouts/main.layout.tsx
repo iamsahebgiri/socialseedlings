@@ -61,8 +61,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className={inter.className}>
       <Head>
-        <title>{siteConfig.name} - {siteConfig.description}</title>
+        <title>{`${siteConfig.name} - ${siteConfig.description}`}</title>
         <meta name="description" content={siteConfig.description} />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <div className="holy-grail">
         <main className="holy-grail__main">

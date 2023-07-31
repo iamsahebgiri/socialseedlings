@@ -42,7 +42,7 @@ export default function Explore() {
   return (
     <MainLayout>
       <Head>
-        <title>Explore - {siteConfig.name}</title>
+        <title>{`Explore - ${siteConfig.name}`}</title>
       </Head>
       <header>
         <div className="group heading">Explore</div>

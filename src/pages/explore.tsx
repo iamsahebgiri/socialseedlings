@@ -52,7 +52,10 @@ export default function Explore() {
           data={pages}
           size={0}
           setSize={() => {
-            fetchRandomImages();
+            // console.log(pages)
+            if (!isLoading) {
+              fetchRandomImages();
+            }
           }}
           isLoading={isLoading}
           error={error}
